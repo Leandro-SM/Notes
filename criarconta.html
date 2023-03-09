@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Off - Criar Cont/a</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">TaskOff</a></li>
+        </ul>
+    </nav>
+
+    <div class="divisaoform">
+    <h1>Vamos criar seu usuário..</h1>
+        <form action="task.html" method="post" class="loguinho">
+            <label for="usernamecadastro">Escolha como prefere ser chamado:</label>  
+            <input type="text" name="username" id="usernamecadastro"><br>
+            <label for="senhacadastro">Crie uma senha para seu usuário:</label>
+            <input type="password" name="password" id="senhacadastro"><br>
+            <label for="emailcadastro">Digite um endereço de e-mail:</label>
+            <input type="email" name="email" id="emailcadastro"><br>
+            <label for="fotocadastro">Selecione uma foto de perfil</label>
+            <input type=file name=filename id=file>
+     <button type=button onclick='test()'>Display</button></br>
+        </form>
+</div> 
+
+<script>
+    function test() {
+        var file = document.getElementById('file').files[0];
+        var reader  = new FileReader();
+        reader.onload = function(e)  {
+            var image = document.createElement("img");
+            image.src = e.target.result;
+            image.height = 250;
+            image.width = 200;
+            document.body.appendChild(image);
+         }
+         reader.readAsDataURL(file);
+     }
+</script>
+      
+</body>
+</html>

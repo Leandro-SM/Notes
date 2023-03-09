@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <nav>
+    <ul>
+      <li><a href="index.html">TaskOff</a></li>
+    </ul>
+    <ul class="sair">
+      <li><a href="index.html" id="logout">Logout</a></li>
+    </ul>
+
+
+    <script>
+      const sair = document.getElementById('logout');
+      botao.addEventListener('click', function() {
+        localStorage.removeItem('username');
+      });
+    </script>
+    
+  </nav>
+  <div class="welcome" style="margin-left: 80px;">
+    <h1>Seja bem-vindo, <span style="color: white;"id="username"></span>!</h1>
+    <br>
+    <h2 class="titulotask">Aqui você pode gerenciar suas ideias de forma dinâmica e divertida!</h2>
+  </div>
+  <script>
+    const username = localStorage.getItem('username');
+
+    if (username) {
+      document.getElementById('username').textContent = username;
+    } else {
+
+    }
+  </script>
+<br>
+<br>
+
+
+<div class="listona">
+  <form id="form-adicionar">
+    <label for="novo-item" style="color: rgb(213, 0, 107); font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Novo Item</label>
+    <input type="text" id="novo-item" placeholder="Dê um nome para sua ideia.."><br>
+    <button type="submit" class="adicionar-item">Adicionar +</button>
+  </form>
+<ul id="minha-lista">
+  <li onclick="abrirIdeia(this)">Exemplo!</li>
+</ul>
+
+<div class="bloco" style="margin-left: 350px; margin-top: -120px; background-color: rgb(218, 214, 160); height: 200px; width: 200px; overflow: hidden;">
+  
+</div>
+
+</div>
+
+<script>
+const form = document.querySelector('#form-adicionar');
+const lista = document.querySelector('#minha-lista');
+
+function abrirIdeia(item) {
+  //console.log("Você clicou no item:", item.innerText);
+  alert("Você clicou no item");
+  (bloco.style)
+}
+
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+
+  const novoItem = document.querySelector('#novo-item').value;
+
+  if (novoItem) {
+    const novoLi = document.createElement('li');
+    novoLi.textContent = novoItem;
+    novoItem.onclick = function() {
+    abrirIdeia(this);
+  };
+    lista.appendChild(novoLi);
+    document.querySelector('#novo-item').value = '';
+  }
+   
+});
+</script>
+
+</body>
+
+</html>
